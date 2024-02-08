@@ -1,7 +1,9 @@
 using AppDataBase.Data;
 using AppModel.Models;
+using AppWebMVC.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using AppWebMVC.Services.Interfaces;
 
 namespace AppWebMVC
 {
@@ -21,6 +23,11 @@ namespace AppWebMVC
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<IComputerServices, ComputerServices>();
+            builder.Services.AddScoped<IGraphicsServices, GraphicsServices>();
+            builder.Services.AddScoped<IComputersGraphicsServices, ComputersGraphicsServices>();
+            builder.Services.AddScoped<IProducerServices, ProducerServices>();
 
             var app = builder.Build();
 

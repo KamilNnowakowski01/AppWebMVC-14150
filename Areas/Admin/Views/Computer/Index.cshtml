@@ -1,0 +1,61 @@
+﻿@model List<Computer>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "List Computers";
+}
+<div class="text-center">
+    <h1 class="display-4">List Computers</h1>
+</div>
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-1">
+            <a asp-action="Create" class="btn btn-primary">Create</a>
+        </div>
+    </div>
+</div>
+<div class="pb-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>MemoryRam</th>
+                <th>MemoryDisk GB</th>
+                <th>Processor</th>
+                <th>DateOfProduction</th>
+                <th>Producer</th>
+                <th>Graphics</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var computer in Model)
+            {
+                <tr>
+                    <td>@computer.ComputerId</td>
+                    <td>@computer.Name</td>
+                    <td>@computer.MemoryRam</td>
+                    <td>@computer.MemoryDisk</td>
+                    <td>@computer.Processor</td>
+                    <td>@computer.DateOfProduction.ToString("yyyy-MM-dd")</td>
+                    <td>@computer.Producer?.Name</td>
+                    <td>
+                        @foreach (var computersGraphics in computer.ComputersGraphics)
+                        {
+                            @computersGraphics.Graphics.Name
+                            <br />
+                        }
+                    </td>
+  
+                    <td>
+                        <a asp-action="Details" asp-route-id="@computer.ComputerId" class="btn btn-secondary m-1">Details</a>
+                        <a asp-action="Edit" asp-route-id="@computer.ComputerId" class="btn btn-warning m-1">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@computer.ComputerId" class="btn btn-danger m-1">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,46 @@
+﻿@model List<Producer>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "List Producer";
+}
+<div class="text-center">
+    <h1 class="display-4">List Producer</h1>
+</div>
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-1">
+            <a asp-action="Create" class="btn btn-primary">Create</a>
+        </div>
+    </div>
+</div>
+<div class="pb-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>YearFounded</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producer in Model)
+            {
+                <tr>
+                    <td>@producer.ProducerId</td>
+                    <td>@producer.Name</td>
+                    <td>@producer.Address</td>
+                    <td>@producer.YearFounded</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@producer.ProducerId" class="btn btn-secondary m-1">Details</a>
+                        <a asp-action="Edit" asp-route-id="@producer.ProducerId" class="btn btn-warning m-1">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@producer.ProducerId" class="btn btn-danger m-1">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

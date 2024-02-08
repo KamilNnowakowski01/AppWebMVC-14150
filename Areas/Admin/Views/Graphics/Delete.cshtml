@@ -1,0 +1,55 @@
+﻿@model AppModel.Models.Graphics
+
+@{
+    ViewData["Title"] = "Delete Graphics";
+}
+
+<h2>Delete Graphics</h2>
+
+<form asp-action="Delete" method="post" class="mt-4">
+    <div class="form-group">
+        <label asp-for="GraphicsId" class="control-label">Id</label>
+        <input asp-for="GraphicsId" class="form-control" disabled />
+        <input asp-for="GraphicsId" type="hidden" value="@Model.GraphicsId" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input asp-for="Name" class="form-control" disabled/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MemoryGB" class="control-label">Address</label>
+        <input asp-for="MemoryGB" class="form-control" type="number" disabled />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConnectorType" class="control-label">YearFounded</label>
+        <input asp-for="ConnectorType" class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CoreClockMHz" class="control-label">Address</label>
+        <input asp-for="CoreClockMHz" class="form-control" type="number" disabled />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecommendedPower" class="control-label">Address</label>
+        <input asp-for="RecommendedPower" class="form-control" type="number" disabled />
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+    }
+}

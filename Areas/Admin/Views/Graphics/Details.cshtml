@@ -1,0 +1,50 @@
+﻿@model AppModel.Models.Graphics
+
+@{
+    ViewData["Title"] = "Details Graphics";
+}
+
+<h2>Details Graphics</h2>
+
+<form class="mt-4">
+    <div class="form-group">
+        <label asp-for="GraphicsId" class="control-label">Id</label>
+        <input asp-for="GraphicsId" class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input asp-for="Name" class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MemoryGB" class="control-label">MemoryGB</label>
+        <input asp-for="MemoryGB" class="form-control" type="number" disabled />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConnectorType" class="control-label">ConnectorType</label>
+        <input asp-for="ConnectorType" class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CoreClockMHz" class="control-label">CoreClockMHz</label>
+        <input asp-for="CoreClockMHz" class="form-control" type="number" disabled />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecommendedPower" class="control-label">RecommendedPower</label>
+        <input asp-for="RecommendedPower" class="form-control" type="number" disabled />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+    }
+}

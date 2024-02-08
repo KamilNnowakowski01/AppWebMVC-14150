@@ -1,4 +1,4 @@
-using AppWebMVC.Models;
+using AppModel.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

@@ -1,0 +1,111 @@
+﻿@model AppModel.ViewModels.ComputerVM
+
+@{
+    ViewData["Title"] = "Edit Computer";
+}
+
+<h2>Edit Computer #@Model.Computer.ComputerId</h2>
+
+<form asp-action="Edit" method="post" class="mt-4">
+    <div class="form-group">
+        <label asp-for="Computer.ComputerId" class="control-label">Computer ID</label>
+        <input asp-for="Computer.ComputerId" class="form-control" disabled />
+        <input asp-for="Computer.ComputerId" type="hidden" value="@Model.Computer.ComputerId" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Computer.Name" class="control-label">Name</label>
+        <input asp-for="Computer.Name" class="form-control" />
+        <span asp-validation-for="Computer.Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Computer.MemoryRam" class="control-label">MemoryRam</label>
+        <input asp-for="Computer.MemoryRam" class="form-control" type="number" />
+        <span asp-validation-for="Computer.MemoryRam" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Computer.MemoryDisk" class="control-label">MemoryDisk</label>
+        <input asp-for="Computer.MemoryDisk" class="form-control" type="number" />
+        <span asp-validation-for="Computer.MemoryDisk" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Computer.Processor" class="control-label">Processor</label>
+        <input asp-for="Computer.Processor" class="form-control" />
+        <span asp-validation-for="Computer.Processor" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Computer.DateOfProduction" class="control-label">DateOfProduction</label>
+        <input asp-for="Computer.DateOfProduction" class="form-control" type="date" />
+        <span asp-validation-for="Computer.DateOfProduction" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Computer.ProducerId" class="control-label">Producer Name</label>
+        <select asp-for="Computer.ProducerId" class="form-select" aria-label="Default select example">
+            
+            @foreach (var producer in Model.Producers)
+            {
+                if (producer == Model.Computer.Producer)
+                {
+                    <option value="@producer.ProducerId" selected>@producer.Name</option>
+                }
+                else
+                {
+                    <option value="@producer.ProducerId">@producer.Name</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GraphicsIds" class="control-label">Computers Graphics</label>
+        <select asp-for="GraphicsIds" class="form-select" id="multiple-select-field" data-placeholder="Choose anything" multiple>
+            @foreach (var graphics in Model.Graphics)
+            {
+                bool isSelected = Model.Computer.ComputersGraphics.Any(cg => cg.GraphicsId == graphics.GraphicsId);
+
+                if (isSelected)
+                {
+                    <option value="@graphics.GraphicsId" selected="selected">
+                        @graphics.Name
+                    </option>
+                }
+                else
+                {
+                    <option value="@graphics.GraphicsId">
+                        @graphics.Name
+                    </option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+        <script>
+            $(document).ready(function () {
+                $('#multiple-select-field').select2({
+                    theme: "bootstrap-5",
+                    placeholder: "Choose anything",
+                    closeOnSelect: false
+                });
+            });
+        </script>
+    }
+}

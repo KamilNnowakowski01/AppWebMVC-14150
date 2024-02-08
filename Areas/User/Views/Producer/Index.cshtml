@@ -1,0 +1,33 @@
+﻿@model List<Producer>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "List Producer";
+}
+<div class="text-center">
+    <h1 class="display-4">List Producer</h1>
+</div>
+<div class="pb-5 pt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>YearFounded</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producer in Model)
+            {
+                <tr>
+                    <td>@producer.ProducerId</td>
+                    <td>@producer.Name</td>
+                    <td>@producer.Address</td>
+                    <td>@producer.YearFounded</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

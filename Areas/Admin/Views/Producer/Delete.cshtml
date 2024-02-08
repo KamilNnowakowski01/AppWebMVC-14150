@@ -1,0 +1,45 @@
+﻿@model AppModel.Models.Producer
+
+@{
+    ViewData["Title"] = "Delete Producer";
+}
+
+<h2>Delete Producer</h2>
+
+<form asp-action="Delete" method="post" class="mt-4">
+    <div class="form-group">
+        <label asp-for="ProducerId" class="control-label">Computer ID</label>
+        <input asp-for="ProducerId" class="form-control" disabled />
+        <input asp-for="ProducerId" type="hidden" value="@Model.ProducerId" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input asp-for="Name" class="form-control" disabled/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address" class="control-label">Address</label>
+        <input asp-for="Address" class="form-control" disabled />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="YearFounded" class="control-label">YearFounded</label>
+        <input asp-for="YearFounded" class="form-control" type="number" disabled />
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+    }
+}
