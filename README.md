@@ -1,4 +1,5 @@
-# Projekt Zaliczeniowy - Zarządzanie Danymi o Złożonych Komputerach
+# Projekt Zaliczeniowy 
+# PROGRAMOWANIE W ŚRODOWISKU ASP.NET
 
 Autor: Kamil Nowakowski  
 Indeks: 14150
