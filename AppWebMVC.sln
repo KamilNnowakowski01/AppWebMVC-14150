@@ -3,18 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWebMVC", "AppWebMVC.csproj", "{A60B0A91-ACED-4295-86C3-BC5FA959CD1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWebMVC", "AppWebMVC.csproj", "{A60B0A91-ACED-4295-86C3-BC5FA959CD1A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2F4C740B-FF6E-4E2F-BD80-B2F91C82E167} = {2F4C740B-FF6E-4E2F-BD80-B2F91C82E167}
 		{F6B3BC91-3247-4D66-A869-C59B896BF11B} = {F6B3BC91-3247-4D66-A869-C59B896BF11B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppDataBase", "..\AppDataBase\AppDataBase.csproj", "{2F4C740B-FF6E-4E2F-BD80-B2F91C82E167}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppDataBase", "..\AppDataBase\AppDataBase.csproj", "{2F4C740B-FF6E-4E2F-BD80-B2F91C82E167}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F6B3BC91-3247-4D66-A869-C59B896BF11B} = {F6B3BC91-3247-4D66-A869-C59B896BF11B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppModel", "..\AppModel\AppModel.csproj", "{F6B3BC91-3247-4D66-A869-C59B896BF11B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppModel", "..\AppModel\AppModel.csproj", "{F6B3BC91-3247-4D66-A869-C59B896BF11B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppWebAPI", "..\AppWebAPI\AppWebAPI.csproj", "{2687690F-13F5-4121-B339-5C53E9306155}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{F6B3BC91-3247-4D66-A869-C59B896BF11B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6B3BC91-3247-4D66-A869-C59B896BF11B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6B3BC91-3247-4D66-A869-C59B896BF11B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2687690F-13F5-4121-B339-5C53E9306155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2687690F-13F5-4121-B339-5C53E9306155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2687690F-13F5-4121-B339-5C53E9306155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2687690F-13F5-4121-B339-5C53E9306155}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

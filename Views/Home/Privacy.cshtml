@@ -1,6 +1,55 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="/lib/splide/css/splide.min.css"> <!-- External CSS -->
+    <link rel="stylesheet" href="/lib/splide/css/themes/splide-sea-green.min.css">
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+    <p>Use this page to detail your site's privacy policy.</p>
+
+    <section class="splide" aria-labelledby="carousel-heading">
+        <h2 id="carousel-heading">Splide Basic - splidejs.com</h2>
+        <h6 id="carousel-heading">additional CSS and JS style https://splidejs.com/</h6>
+        <div class="splide__track p-5">
+            <ul class="splide__list">
+                <li class="splide__slide p-3">
+                    <div class="card">
+                        <div class="card-body">
+                            Slide 01
+                        </div>
+                    </div>
+                </li>
+                <li class="splide__slide p-3">
+                    <div class="card">
+                        <div class="card-body">
+                            Slide 02
+                        </div>
+                    </div>
+                </li>
+                <li class="splide__slide p-3">
+                    <div class="card">
+                        <div class="card-body">
+                            Slide 03
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <script src="/lib/splide/js/splide.min.js"></script> <!-- External JS -->
+    <script>
+        // Inline JavaScript
+        console.log('@ViewData["Title"] page loaded');
+        var splide = new Splide('.splide');
+        splide.mount();
+    </script>
+</body>
+</html>
